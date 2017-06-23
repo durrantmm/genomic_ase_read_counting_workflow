@@ -60,7 +60,7 @@ rule bowtie2_map:
         f1='{fastq_dir}/{{sample}}.R1.fq.gz'.format(fastq_dir=FASTQ_DIR),
         f2='{fastq_dir}/{{sample}}.R2.fq.gz'.format(fastq_dir=FASTQ_DIR)
     output:
-        '{sam_dir}/{sample}}.{{genome}}.sam'.format(sam_dir=SAM_DIR)
+        '{sam_dir}/{{sample}}.{{genome}}.sam'.format(sam_dir=SAM_DIR)
     threads: config['bowtie2_map_threads']
     shell:
         "bowtie2 -x {input.refgen} -1 {input.f1} -2 {input.f2} -S {output} -p {threads}"
@@ -68,7 +68,7 @@ rule bowtie2_map:
 
 rule add_read_groups:
     input:
-        '{sam_dir}/{sample}}.{{genome}}.sam'.format(sam_dir=SAM_DIR)
+        '{sam_dir}/{{sample}}.{{genome}}.sam'.format(sam_dir=SAM_DIR)
     output:
         '{add_rg_dir}/{{sample}}.{{genome}}.bam'.format(add_rg_dir=READ_GROUPS_DIR)
     run:
