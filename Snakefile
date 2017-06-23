@@ -60,7 +60,7 @@ rule bowtie2_map:
         f1='{fastq_dir}/{{sample}}.R1.fq.gz'.format(fastq_dir=FASTQ_DIR),
         f2='{fastq_dir}/{{sample}}.R2.fq.gz'.format(fastq_dir=FASTQ_DIR)
     output:
-        '{sam_dir}/{{sample}}.{{genome}}/{{sample}}.{{genome}}.sam'.format(sam_dir=SAM_DIR)
+        '{sam_dir}/{sample}}.{{genome}}.sam'.format(sam_dir=SAM_DIR)
     threads: config['bowtie2_map_threads']
     shell:
         "bowtie2 -x {input.refgen} -1 {input.f1} -2 {input.f2} -S {output} -p {threads}"
@@ -68,7 +68,7 @@ rule bowtie2_map:
 
 rule add_read_groups:
     input:
-        '{sam_dir}/{{sample}}.{{genome}}/{{sample}}.{{genome}}.sam'.format(sam_dir=SAM_DIR)
+        '{sam_dir}/{sample}}.{{genome}}.sam'.format(sam_dir=SAM_DIR)
     output:
         '{add_rg_dir}/{{sample}}.{{genome}}.bam'.format(add_rg_dir=READ_GROUPS_DIR)
     run:
@@ -142,7 +142,7 @@ rule bowtie2_remap:
         f1='{find_snps_dir}/{{sample}}.{{genome}}/{{sample}}.{{genome}}.remap.fq1.gz'.format(find_snps_dir=FIND_SNPS_DIR),
         f2='{find_snps_dir}/{{sample}}.{{genome}}/{{sample}}.{{genome}}.remap.fq2.gz'.format(find_snps_dir=FIND_SNPS_DIR)
     output:
-        '{remap_dir}/{{sample}}.{{genome}}/{{sample}}.{{genome}}.sam'.format(remap_dir=REMAP_DIR)
+        '{remap_dir}/{{sample}}.{{genome}}.sam'.format(remap_dir=REMAP_DIR)
     threads: config['bowtie2_map_threads']
     shell:
         "bowtie2 -x {input.refgen} -1 {input.f1} -2 {input.f2} -S {output} -p {threads}"
@@ -150,7 +150,7 @@ rule bowtie2_remap:
 
 rule remap_add_read_groups:
     input:
-        '{remap_dir}/{{sample}}.{{genome}}/{{sample}}.{{genome}}.sam'.format(remap_dir=REMAP_DIR)
+        '{remap_dir}/{{sample}}.{{genome}}.sam'.format(remap_dir=REMAP_DIR)
     output:
         '{add_rg_dir}/{{sample}}.{{genome}}.bam'.format(add_rg_dir=REMAP_RG_DIR)
     run:
