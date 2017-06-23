@@ -12,12 +12,12 @@
         "time": "00:15:00"
     },
 
-    "star_genome": {
+    "bowtie2_build_genome": {
         "mem": "60G",
         "time": "48:00:00"
     },
 
-    "star_align": {
+    "bowtie2_map": {
         "mem": "60G",
         "time": "24:00:00"
     },
@@ -42,7 +42,7 @@
         "time": "24:00:00"
     },
 
-    "star_align":{
+    "bowtie2_remap":{
         "mem": "60G",
         "time": "24:00:00"
     },

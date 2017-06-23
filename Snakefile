@@ -43,7 +43,7 @@ rule all:
         print("GENOMIC_ASECOUNT FINISHED WITH NO EXCEPTIONS!")
 
 
-rule bowtie2_index_genome:
+rule bowtie2_build_genome:
     input:
         "{refgen_dir}/{{genome}}.fa".format(refgen_dir=REFGEN_DIR),
     output:
