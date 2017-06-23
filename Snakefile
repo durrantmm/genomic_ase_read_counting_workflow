@@ -40,7 +40,7 @@ rule all:
         expand('{read_counts_dir}/{{sample}}.{{genome}}.tsv'.format(read_counts_dir=READ_COUNTS_DIR),
         sample=SAMPLES, genome=GENOMES)
     run:
-        print("ASECOUNT FINISHED WITH NO EXCEPTIONS!")
+        print("GENOMIC_ASECOUNT FINISHED WITH NO EXCEPTIONS!")
 
 
 rule bowtie2_index_genome:
