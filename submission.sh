@@ -1,6 +1,6 @@
 #
 # set the name of the job
-#$ -N log_rnavcw_snakemake
+#$ -N log_genomic_asecount_snakemake
 #
 # set the maximum memory usage (per slot)
 #$ -l h_vmem=1G
@@ -20,7 +20,7 @@
 #$ -w w
 #
 # output logfile
-#$ -o log_rnavcw_snakemake
+#$ -o log_genomic_asecount_snakemake
 #
 # Pass all environment variables
 #$ -V
