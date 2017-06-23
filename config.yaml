@@ -1,0 +1,40 @@
+# Give the execution path of picard and gatk
+# You may want to increase the memory available
+# to java with
+# "java -Xmx50G -jar GenomeAnalysisTK.jar"
+gatk_path: "java -jar GenomeAnalysisTK.jar"
+picard_path: "java -jar picard.jar"
+
+# Set the working directory (wd)
+wd: test
+
+
+# You must create and populate these directories in your
+# working directory (wd) with the starting files.
+# Symbolic links should work.
+# Please see the README for details
+fastq_dir: 0.fastq
+refgen_dir: 0.reference_genome_fasta
+gencode_dir: 0.gencode
+vcf_dir: 0.vcf
+
+
+# These directories will be created
+# as the workflow executes.
+snp_dir: 1.snps
+sam_dir: 2.sam_dir
+add_rg_dir: 3.add_read_groups
+mark_dups_dir: 4.mark_duplicates
+find_snps_dir: 5.find_intersecting_snps
+remap_dir: 6.remap_dir
+remap_add_rg_dir: 7.remap_add_read_groups
+remap_mark_dups_dir: 8.remap_mark_duplicates
+filter_remapped_reads: 9.filter_remapped_reads
+merged_dir: 10.merged_wasp_bam
+sorted_dir: 11.sorted_bam
+read_counts_dir: FINAL.read_counts
+
+
+# Extra rule configurations
+bowtie2_build_threads: 12
+bowtie2_map_threads: 6

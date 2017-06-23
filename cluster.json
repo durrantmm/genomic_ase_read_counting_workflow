@@ -1,0 +1,94 @@
+{
+    "__default__": {
+        "account": "bhatt",
+        "time": "00:15:00",
+        "n": 1,
+        "partition": "core",
+        "mem": "1G"
+    },
+
+    "make_exons_bed": {
+        "mem": "60G",
+        "time": "00:15:00"
+    },
+
+    "star_genome": {
+        "mem": "60G",
+        "time": "48:00:00"
+    },
+
+    "star_align": {
+        "mem": "60G",
+        "time": "24:00:00"
+    },
+
+    "add_read_groups": {
+        "mem": "60G",
+        "time": "12:00:00"
+    },
+
+    "mark_duplicates": {
+        "mem": "60G",
+        "time": "12:00:00"
+    },
+
+    "make_snp_dir": {
+        "mem": "1G",
+        "time": "01:00:00"
+    },
+
+    "find_intersecting_snps": {
+        "mem": "60G",
+        "time": "24:00:00"
+    },
+
+    "star_align":{
+        "mem": "60G",
+        "time": "24:00:00"
+    },
+
+    "remap_add_read_groups":{
+        "mem": "60G",
+        "time": "12:00:00"
+    },
+
+    "remap_mark_duplicates":{
+        "mem": "60G",
+        "time": "12:00:00"
+    },
+
+    "filter_remapped_reads":{
+        "mem": "60G",
+        "time": "12:00:00"
+    },
+
+    "samtools_merge":{
+        "mem": "60G",
+        "time": "01:00:00"
+    },
+
+    "samtools_sort":{
+        "mem": "60G",
+        "time": "01:00:00"
+    },
+
+    "samtools_index":{
+        "mem": "60G",
+        "time": "01:00:00"
+    },
+
+    "index_genome": {
+        "mem": "60G",
+        "time": "01:00:00"
+    },
+
+    "create_genome_dictionary": {
+        "mem": "60G",
+        "time": "01:00:00"
+    },
+
+    "ase_read_counter":{
+        "mem": "60G",
+        "time": "24:00:00"
+    }
+}
